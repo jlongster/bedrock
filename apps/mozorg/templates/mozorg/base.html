@@ -4,11 +4,11 @@
 <form class="billboard" id="footer-email-form" method="post"
       action="https://donate.mozilla.org/page/s/sign-up-for-mozilla"
       onSubmit="dcsMultiTrack('DCS.dcsuri', '/button/newsletter.html', 'WT.ti', 'Newsletter%20Button%20Click');">
-  <h3>Get Mozilla updates:</h3>
+  <h3>{{ _('Get Mozilla updates') }}:</h3>
 
   <div class="form-contents">
     <div class="field field-email">
-      <input name="email" type="email" id="id_email" value="" placeholder="YOUR EMAIL HERE">
+      <input name="email" type="email" id="id_email" value="" placeholder="{{ _('YOUR EMAIL HERE') }}">
     </div>
 
     <div id="form-details">
@@ -253,15 +253,15 @@
       <div class="field field-privacy">
         <label for="id_privacy" class="privacy-check-label">
           <input required="true" type="checkbox" name="custom-314" id="id_privacy" />
-          <span class="title">I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a></span>
+          <span class="title">{{ _('I agree to the <a href="%s">Privacy Policy</a>', '/en-US/privacy-policy') }}</span>
         </label>
       </div>
     </div>
   </div>
 
   <div class="form-submit">
-    <input type="submit" id="footer_email_submit" value="Sign me up »" class="button-blue">
-    <p class="form-details"><small>We will only send you Mozilla-related information.</small></p>
+    <input type="submit" id="footer_email_submit" value="{{ _('Sign me up') }} »" class="button-blue">
+    <p class="form-details"><small>{{ _('We will only send you Mozilla-related information.') }}</small></p>
   </div>
 </form>
 {% endblock %}

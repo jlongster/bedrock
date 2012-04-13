@@ -5,7 +5,9 @@ from django.core.validators import EMPTY_VALUES
 
 from product_details import product_details
 
-FORMATS = (('H', 'HTML'), ('T', 'Text'))
+from l10n_utils.dotlang import _
+
+FORMATS = (('H', _('HTML')), ('T', _('Text')))
 
 class SideRadios(widgets.RadioFieldRenderer):
     """Render radio buttons as labels"""
@@ -25,10 +27,11 @@ class PrivacyWidget(widgets.CheckboxInput):
         return mark_safe(
             '<label for="%s" class="privacy-check-label">'
             '%s '
-            '<span class="title">I agree to the '
-            '<a href="/en-US/privacy-policy">Privacy Policy</a>'
-            '</span></label>' 
-            % (attrs['id'], input_txt)
+            '<span class="title">%s</span></label>'             
+            % (attrs['id'],
+               input_txt,
+               _('I agree to the <a href="%s">Privacy Policy</a>',
+                 '/en-US/privacy-policy'))
          )
 
 class EmailInput(widgets.TextInput):
